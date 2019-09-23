@@ -5,3 +5,9 @@ mat-accordion{
 .no-posts-info{
   text-align: center;
 }
+.newlines {
+  white-space: pre-line;
+}
+.folder{
+  float: right;
+}

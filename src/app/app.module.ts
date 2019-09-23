@@ -4,7 +4,7 @@ import { MatInputModule, MatCardModule,MatToolbarModule,MatExpansionModule,
    MatButtonModule} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
-//import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewPostComponent } from './posts/new-post/new-post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,7 +23,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-  // AppRoutingModule,
+   AppRoutingModule,
     MatInputModule,
     BrowserAnimationsModule,
     MatCardModule,

@@ -5,18 +5,27 @@
       matInput
       type="text"
       name="title"
-      ngModel
+      [ngModel]="post?.title"
       required
       placeholder="Post title"
       #title="ngModel">
       <mat-error *ngIf="title.invalid">Please enter a title</mat-error>
     </mat-form-field> <br/>
     <mat-form-field>
+      <input
+      matInput
+      type="text"
+      name="folder"
+      [ngModel]="post?.folder"
+      placeholder="Post folder"
+      #title="ngModel">
+    </mat-form-field> <br/>
+    <mat-form-field>
       <textarea
        matInput
-       rows="6"
+       rows="20"
        name="content"
-       ngModel
+       [ngModel]="post?.content"
        required
        placeholder="Post content"
        #content="ngModel"></textarea>
