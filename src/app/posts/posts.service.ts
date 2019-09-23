@@ -23,6 +23,7 @@ export class PostsService {
             // Convert the _id we get from mongoDB to id fdels
             title: post.title,
             content: post.content,
+            folder: post.folder,
             id: post._id
           };
         });
@@ -34,14 +35,19 @@ export class PostsService {
     });
   }
 
+  // Get a single post by post id
+  getPost(id){
+    return {...this.posts.find(p => p.id == id)};
+  }
+
   // Listen to changes in post updated
   getPostUpdateListener(){
     return this.postUpdated.asObservable();
   }
 
   // Add a new post
-  addPost(title: string, content: string) {
-    const post: Post = {id: null, title: title, content: content};
+  addPost(title: string, folder: string, content: string) {
+    const post: Post = {id: null, title: title, content: content, folder: folder};
     // Post request to DB to add a new post
     this.http.post<{message: string, postId: string }>
     ('http://localhost:3000/api/posts', post).subscribe((resData) => {

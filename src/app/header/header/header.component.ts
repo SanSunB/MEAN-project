@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+// Page header and links
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

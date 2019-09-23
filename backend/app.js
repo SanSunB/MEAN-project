@@ -33,7 +33,8 @@ app.post('/api/posts',(req, res, next) => {
   // A new field added by body parser
   const post = new Post({
     title: req.body.title,
-    content: req.body.content
+    content: req.body.content,
+    folder: req.body.folder
   });
   // write post to db
   post.save().then(createdPost => {
